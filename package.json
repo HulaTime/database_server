@@ -1,0 +1,22 @@
+{
+  "name": "database_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxProvin/database_server.git"
+  },
+  "author": "Max Provin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxProvin/database_server/issues"
+  },
+  "homepage": "https://github.com/MaxProvin/database_server#readme",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
