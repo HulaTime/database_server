@@ -5,11 +5,29 @@ var app = express();
 
 app.use(express.static('app/public'));
 
-// This responds with "Hello World" on the homepage
-app.get('/', function (req, res) {
-   console.log("Got a GET request for the homepage");
-   res.send('Hello GET');
-})
+// This responds with the index.html view
+app.get('/', function(req, res) {
+  console.log("GET /");
+  res.sendFile( __dirname + "/app/views/index.html");
+});
+
+// This is the route for the form action in index.html
+app.get('/process_get', function(req, res) {
+  console.log("GET /process_get")
+
+  // req.query accesses params
+  console.log(req.query + '   ---parameters---')
+
+  //prepare response in json format
+  response = {
+      first_name:req.query.first_name,
+      last_name:req.query.last_name
+    }
+
+  console.log(response)
+
+  res.end(JSON.stringify(response))
+});
 
 // This responds a POST request for the homepage
 app.post('/', function (req, res) {
