@@ -1,7 +1,9 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static('public'));
+//---------------------Routing Start-----------------------
+
+app.use(express.static('app/public'));
 
 // This responds with "Hello World" on the homepage
 app.get('/', function (req, res) {
@@ -40,3 +42,5 @@ var server = app.listen(8081, function () {
 
    console.log("Example app listening at http://%s:%s", host, port)
 })
+
+//-------------Routing End----------------
