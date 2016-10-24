@@ -1,6 +1,10 @@
+var memory;
+
 var express = require('express');
 var app = express();
-var routes = require('./app/routes');
+var landingPage = require('./app/controllers/landingPageController');
+var getKey = require('./app/controllers/getKeyController');
+var setKey = require('./app/controllers/setKeyController');
 
 // Morgan is a module that outputs request response information to the console while the server is running
 var logger = require('morgan');
@@ -10,7 +14,9 @@ app.set('views', 'app/views');
 
 app.use(express.static('app/public'));
 app.use(logger('dev'));
-app.use('/', routes);
+app.use('/', landingPage);
+app.use('/', getKey);
+app.use('/', setKey);
 
 
 //--------------Server--------------
