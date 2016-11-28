@@ -1,20 +1,22 @@
 require 'sinatra/base'
+require 'json'
 
 class DBServer < Sinatra::Base
   
   set :port, 4000
 
-  $h = {}
-
   get '/' do
   end
 
   get '/get' do
-  	$h[params['key']]
+  	File.open('params.txt', 'r') do |file|
+  		@json = file.read
+  	end
+  	JSON.parse(@json)[params['key']]
   end
 
   get '/set' do
-  	params.each { |k, v| $h[k] = v }
+ 		File.write('params.txt', params.to_json)
   	redirect '/'
   end
 
