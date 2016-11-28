@@ -4,6 +4,12 @@
 - `git clone git@github.com:MaxProvin/database_server.git`
 - `bundle`
 
+## Tests
+- `rspec` to run tests
+
+## Dependencies
+-
+
 ## Usage
 - `ruby app.rb`
 - requests are made via the url bar in your browser
