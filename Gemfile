@@ -6,3 +6,4 @@ gem "rspec-sinatra"
 gem "capybara"
 gem "shotgun"
 gem "json"
+gem 'selenium-webdriver'

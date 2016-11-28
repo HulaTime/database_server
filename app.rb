@@ -9,10 +9,9 @@ class DBServer < Sinatra::Base
   end
 
   get '/get' do
-  	File.open('params.txt', 'r') do |file|
-  		@json = file.read
-  	end
-  	JSON.parse(@json)[params['key']]
+  	if File.exist? './params.txt'
+	  	JSON.parse(File.read('params.txt'))[params['key']]
+	  end
   end
 
   get '/set' do
