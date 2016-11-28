@@ -3,7 +3,8 @@ This is a simple Sinatra server with 3 basic routes to access the server, save a
 The app uses capybara and rspec for testing and the json gem to parse the user input so it can be easilly saved and retrieved from a file. This also makes input easy to save to a database in string format.
 
 ## Installation via command line
-- `git clone git@github.com:MaxProvin/database_server.git`
+- `git clone git@github.com:MaxProvin/database_server.git` in desired directory
+- `cd database_server`
 - `bundle`
 
 ## Tests
