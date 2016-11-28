@@ -1,8 +1,16 @@
 require 'sinatra/base'
 
-class ClassName < Sinatra::Base
+class DBServer < Sinatra::Base
+  
+  set :port, 4000
+
   get '/' do
-    'Hello ClassName!'
+  end
+
+  get '/get' do
+  end
+
+  post '/set' do
   end
 
   # start the server if ruby file executed directly
